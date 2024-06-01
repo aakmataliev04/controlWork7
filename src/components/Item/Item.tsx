@@ -14,7 +14,7 @@ const Item: React.FC<ItemProps> = ({item, addItems}) => {
           <img className={'item-img'} src={item.image}/>
           <div className={'item-name'}>{item.name}</div>
         </div>
-        <div className={'item-price'}>Price: {item.price} som</div>
+        <div className={'item-price'}>Price: {item.price}  KGS</div>
     </div>
   );
 };

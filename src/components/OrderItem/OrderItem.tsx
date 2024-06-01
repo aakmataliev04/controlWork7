@@ -12,7 +12,7 @@ const OrderItem: React.FC<OrderItemProps> = ({item, index}) => {
     <div className={'orderItem'} key={index}>
       <div>{item.name}</div>
       <div>x{item.amount}</div>
-      <div>{item.price}som</div>
+      <div>{item.price} KGS</div>
       <button className={'orderItem-delete'}></button>
     </div>
   );

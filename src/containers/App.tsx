@@ -11,6 +11,7 @@ import Item from '../components/Item/Item';
 
 import {useState} from 'react';
 import OrderItem from '../components/OrderItem/OrderItem';
+import OrderPriceCounter from '../components/OrderPriceCounter/OrderPriceCounter';
 
 
 const Items: ItemType[] = [
@@ -31,12 +32,24 @@ function App() {
     {name: 'Strawberry tea', price: 120, amount: 0},
     {name: 'Ice tea', price: 100, amount: 0},
   ]);
+  const [orderPrice, setOrderPrice] = useState(0);
 
   const addItems = (index: number) => {
+
     setItemsAmount((prevOrderState) => {
       prevOrderState[index].amount += 1;
       return [...prevOrderState];
       });
+
+    setOrderPrice(() => {
+      let initialPrice = 0;
+      itemsAmount.map((item) => {
+        if (item.amount > 0) {
+          initialPrice += item.amount * item.price;
+        }
+      });
+      return initialPrice;
+    });
   };
 
   return (
@@ -50,6 +63,7 @@ function App() {
             );
           }
         })}
+        <OrderPriceCounter orderPrice={orderPrice} />
       </div>
       <div className="items-block">
         <h2>Add items:</h2>
