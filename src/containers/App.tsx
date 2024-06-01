@@ -13,7 +13,6 @@ import {useState} from 'react';
 import OrderItem from '../components/OrderItem/OrderItem';
 import OrderPriceCounter from '../components/OrderPriceCounter/OrderPriceCounter';
 
-
 const Items: ItemType[] = [
   {name: 'Cola', price: 80, image: colaImage},
   {name: 'Fanta', price: 80, image: fantaImage},
@@ -23,7 +22,9 @@ const Items: ItemType[] = [
   {name: 'Ice tea', price: 100, image: iceTeaImage},
 ];
 function App() {
-
+  // const [orderState, setOrderState] = useState([
+  //
+  // ]);
   const [itemsAmount, setItemsAmount] = useState<ItemStateType[]>([
     {name: 'Cola', price: 80, amount: 0},
     {name: 'Fanta', price: 80, amount: 0},
@@ -52,17 +53,39 @@ function App() {
     });
   };
 
+  const deleteOrderItem = (index: number) => {
+
+    setItemsAmount((prevOrderState) => {
+      const copyPrevOrderState = prevOrderState;
+      copyPrevOrderState[index].amount = 0;
+      return [...copyPrevOrderState];
+    });
+
+    setOrderPrice(() => {
+      let initialPrice = 0;
+      itemsAmount.map((item) => {
+        if (item.amount > 0) {
+          initialPrice += item.amount * item.price;
+        }
+      });
+      return initialPrice;
+    });
+  };
+
   return (
     <div className="App">
       <div className="details-block">
         <h2>Order details:</h2>
-        {itemsAmount.map((item, index) => {
-          if (item.amount > 0) {
-            return (
-              <OrderItem key={index} item={item} index={index}/>
-            );
-          }
-        })}
+        {
+          itemsAmount.map((item, index) => {
+            if (item.amount > 0) {
+              return (
+                <OrderItem key={index} item={item} index={index} deleteOrderItem={() => deleteOrderItem(index)}/>
+              );
+            }
+          })
+        }
+
         <OrderPriceCounter orderPrice={orderPrice} />
       </div>
       <div className="items-block">
