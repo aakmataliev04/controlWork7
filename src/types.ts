@@ -3,3 +3,8 @@ export interface ItemType {
   price: number,
   image: string
 }
+export interface ItemStateType {
+  name: string,
+  price: number,
+  amount: number
+}
