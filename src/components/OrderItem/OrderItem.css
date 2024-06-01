@@ -11,7 +11,7 @@
 .orderItem-delete {
   width: 30px;
   height: 30px;
-  background: url("src/assets/delete-icon.png") center center no-repeat darkred;
+  background: url('src/assets/delete-icon.png') center center no-repeat darkred;
   background-size: cover;
   border-radius: 8px;
   border: 1.5px solid darkred;

@@ -5,7 +5,7 @@ interface Props {
   orderPrice: number;
 }
 
-const OrderPriceCounter: React.FC<Props> = ({orderPrice}) => {
+const OrderPriceCounter: React.FC<Props> = ({ orderPrice }) => {
   if (orderPrice > 0) {
     return (
       <div className={'orderPriceCounter'}>

@@ -1,11 +1,11 @@
 export interface ItemType {
-  name: string,
-  price: number,
-  image: string
+  name: string;
+  price: number;
+  image: string;
 }
 
 export interface ItemStateType {
-  name: string,
-  price: number,
-  amount: number
+  name: string;
+  price: number;
+  amount: number;
 }
