@@ -3,15 +3,21 @@
   justify-content: space-around;
   margin: 10px 20px;
 }
+
 .orderItem:last-child {
   padding-bottom: 20px;
-  border-bottom: 1px solid black;
 }
+
 .orderItem-delete {
   width: 30px;
   height: 30px;
-  background: url("src/assets/delete-icon.png") center center no-repeat;
+  background: url("src/assets/delete-icon.png") center center no-repeat darkred;
   background-size: cover;
   border-radius: 8px;
   border: 1.5px solid darkred;
+}
+
+.orderItem-delete:hover {
+  background-color: white;
+  border: 2px solid darkred;
 }

@@ -8,10 +8,11 @@ interface OrderItemProps {
   deleteOrderItem: React.MouseEventHandler
   index: number
 }
+
 const OrderItem: React.FC<OrderItemProps> = ({item, deleteOrderItem, index}) => {
   return (
     <div className={'orderItem'} key={index}>
-      <div>{item.name}</div>
+      <div><b>{item.name}</b></div>
       <div>x{item.amount}</div>
       <div>{item.price} KGS</div>
       <button className={'orderItem-delete'} onClick={deleteOrderItem}></button>

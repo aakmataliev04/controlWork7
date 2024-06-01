@@ -1,0 +1,39 @@
+.item {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid brown;
+  margin: 10px 5px;
+  background: lightgoldenrodyellow;
+  padding: 7px;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.item:hover .item-name {
+  color: rebeccapurple;
+  font-weight: 700;
+}
+
+.item-img {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin: 0 5vw 0 0;
+  border: 1px solid lightgoldenrodyellow;
+}
+
+.item:hover .item-img {
+  border: 1px solid rebeccapurple;
+}

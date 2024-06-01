@@ -1,3 +1,7 @@
-.OrderPriceCounter {
-
+.orderPriceCounter {
+  width: 80%;
+  border-top: 1px solid brown;
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px 0;
 }
